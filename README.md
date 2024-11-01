@@ -50,6 +50,7 @@ TokoTokoLog(トコトコLog)
 
 ### Association
 
+- belongs_to :user
 - has_many :pins
 
 ### pins テーブル
@@ -65,7 +66,7 @@ TokoTokoLog(トコトコLog)
 
 ### Association
 
-- has_many :images
+- belongs_to :toko_log
 
 <!-- 一つのピンに複数の画像を登録する機能は、ActiveStorageで実装する -->
 
