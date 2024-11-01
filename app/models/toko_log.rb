@@ -1,0 +1,2 @@
+class TokoLog < ApplicationRecord
+end
