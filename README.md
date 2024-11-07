@@ -24,7 +24,7 @@ TokoTokoLog(トコトコLog)
 
 ## データベース設計
 
-![ER図](https://gyazo.com/ad1e9fa4f8272d86969e343d6cb5e9b6raw=true)
+![ER図]()
 
 ### users テーブル
 
@@ -50,6 +50,7 @@ TokoTokoLog(トコトコLog)
 
 ### Association
 
+- belongs_to :user
 - has_many :pins
 
 ### pins テーブル
@@ -65,7 +66,7 @@ TokoTokoLog(トコトコLog)
 
 ### Association
 
-- has_many :images
+- belongs_to :toko_log
 
 <!-- 一つのピンに複数の画像を登録する機能は、ActiveStorageで実装する -->
 
