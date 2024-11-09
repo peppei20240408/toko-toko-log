@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "toko_logs#index"
+  resources :toko_logs, only: [:index, :new, :create]
+
 end
