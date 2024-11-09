@@ -77,18 +77,17 @@ graph TD
   SignUp --> TopPage
   TopPage --> LogIn[ログインページ]
   LogIn --> TopPage
-  Submmit[新規投稿ページ] -->|投稿ボタン| SubmmitComp
+  Submmit[新規投稿ページ] --> TopPage
   SubmmitComp[投稿完了したトコlog] --> TopPage
   Submmit --> TopPage
   TopPage --> Submmit
   TopPage --> MyPage
   TopPage -->|詳細ボタン| TokoLog[トコlogの詳細ページ]
-  TopPage -->|削除ボタン| DeleteComp[投稿の削除完了ページ <br> ＝トップページ/my一覧？]
+  TokoLog -->|削除ボタン| DeleteComp[投稿の削除完了ページ <br> ＝トップページ/my一覧？]
   MyPage --> TokoLog
   MyPage[myトコLogの一覧] --> Submmit
-  MyPage --> Edit[投稿の編集ページ]
+  TokoLog --> Edit[投稿の編集ページ]
   TokoLog --> TopPage
   Edit --> EditComp[編集完了ページ <br> ＝トコlogの詳細ページ？]
   EditComp --> TopPage
-  MyPage -->|削除ボタン| DeleteComp
 ```

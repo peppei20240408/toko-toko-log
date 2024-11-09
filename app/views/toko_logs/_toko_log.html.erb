@@ -1,0 +1,12 @@
+<div class="card">
+  <%# 複数ある画像から特定の1枚を表示するには？ %>
+  <%# <%= link_to image_tag(toko_log.images, class: :card__img ), toko_log_path(toko_log.id) %> %>
+  
+  <div class="card__body">
+    <%= link_to toko_log.title, root_path(toko_log.id), class: :card__title%>
+    <p class="card__summary">
+      <%= toko_log.description %>
+    </p>
+    <%= link_to "by #{toko_log.user.name}", "/users/#{toko_log.user.id}", class: :card__user %>
+  </div>
+</div>

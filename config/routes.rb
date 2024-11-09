@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'toko_logs/index'
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "toko_logs#index"
+  resources :toko_logs, only: [:index, :new, :create]
+
 end
