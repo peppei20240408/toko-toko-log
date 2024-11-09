@@ -9,10 +9,16 @@
     <%= f.text_area :description, class: :form__text, id:"prototype_catch_copy" %>
   </div>
 
+
+<%# 複数の画像を投稿する方法は？ %>
+<% 
+=begin %>
   <div class="field">
     <%= f.label :images, "トコLogの画像たち" %><br />
     <%= f.file_field :images, id:"prototype_image" %>
   </div>
+<% 
+=end%>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
