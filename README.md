@@ -77,7 +77,7 @@ graph TD
   SignUp --> TopPage
   TopPage --> LogIn[ログインページ]
   LogIn --> TopPage
-  Submmit[新規投稿ページ] -->|投稿ボタン| SubmmitComp
+  Submmit[新規投稿ページ] --> TopPage
   SubmmitComp[投稿完了したトコlog] --> TopPage
   Submmit --> TopPage
   TopPage --> Submmit
