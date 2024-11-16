@@ -24,7 +24,7 @@ TokoTokoLog(トコトコLog)
 
 ## データベース設計
 
-![ER図]()
+![ER図](https://gyazo.com/3a17a2dd4456397ff18b277d14efdf3d)
 
 ### users テーブル
 
