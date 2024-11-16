@@ -73,21 +73,28 @@ TokoTokoLog(トコトコLog)
 ## 画面遷移図
 ```mermaid
 graph TD
-  TopPage[トップページ] --> SignUp[新規登録ページ]
-  SignUp --> TopPage
-  TopPage --> LogIn[ログインページ]
-  LogIn --> TopPage
-  Submmit[新規投稿ページ] --> TopPage
-  SubmmitComp[投稿完了したトコlog] --> TopPage
-  Submmit --> TopPage
-  TopPage --> Submmit
-  TopPage --> MyPage
-  TopPage -->|詳細ボタン| TokoLog[トコlogの詳細ページ]
-  TokoLog -->|削除ボタン| DeleteComp[投稿の削除完了ページ <br> ＝トップページ/my一覧？]
-  MyPage --> TokoLog
-  MyPage[myトコLogの一覧] --> Submmit
-  TokoLog --> Edit[投稿の編集ページ]
-  TokoLog --> TopPage
-  Edit --> EditComp[編集完了ページ <br> ＝トコlogの詳細ページ？]
-  EditComp --> TopPage
+  %% TopPage[【トップページ】 <br> トコLog一覧] --> TokoLogsNew[【 トコLog投稿ページ 】 <br> タイトル,概要]
+  TopPage[【トップページ】 <br> トコLog一覧] --> TokoLogShow[トコLog詳細ページ]
+  TokoLogsNew[【 トコLog投稿ページ 】 <br> タイトル,概要] --> PinsNew[【 トコLog投稿ページ 】 <br> ピン,画像,コメント]
+  PinsNew -->|投稿ボタン| CompTokoLogShow[作業完了後のトコLog]
+  CompTokoLogShow -->|戻るボタン| MyPage
+  TopPage -->|トコLog投稿 <br> ボタン| A{ログイン中か？}
+  A -- Yes --> TokoLogsNew
+  A -- No --> LoginORSignUp[【ログイン】 <br> or 【ユーザ登録】 ページ]
+  LoginORSignUp --> SignUp[ユーザー登録ページ]
+  SignUp -->|ユーザ登録 成功| TokoLogsNew
+  LoginORSignUp --> LogIn[ログインページ]
+  LogIn -->|ログイン 成功| TokoLogsNew
+
+  TopPage -->|マイページ <br> ボタン| A{ログイン中か？}
+  A -- Yes --> MyPage[【マイページ】 <br> 自分のトコログ一覧]
+  SignUp -->|ユーザ登録 成功| MyPage
+  LogIn -->|ログイン 成功| MyPage
+
+  
+  MyPage --> MyTokoLogShow[自分のトコlog詳細ページ]
+  MyTokoLogShow --> Edit[編集ページ]
+  Edit --> MyTokoLogShow
+  MyTokoLogShow -->  Delete[※ページ無し <br> 削除完了]
+  Delete --> MyTokoLogShow
 ```
