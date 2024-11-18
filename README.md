@@ -73,28 +73,25 @@ TokoTokoLog(トコトコLog)
 ## 画面遷移図
 ```mermaid
 graph TD
-  %% TopPage[【トップページ】 <br> トコLog一覧] --> TokoLogsNew[【 トコLog投稿ページ 】 <br> タイトル,概要]
   TopPage[【トップページ】 <br> トコLog一覧] --> TokoLogShow[トコLog詳細ページ]
   TokoLogsNew[【 トコLog投稿ページ 】 <br> タイトル,概要] --> PinsNew[【 トコLog投稿ページ 】 <br> ピン,画像,コメント]
   PinsNew -->|投稿ボタン| CompTokoLogShow[作業完了後のトコLog]
   CompTokoLogShow -->|戻るボタン| MyPage
-  TopPage -->|トコLog投稿 <br> ボタン| A{ログイン中か？}
+  TopPage -->|フッター <br> 【きろく】| A{ログイン中か？}
   A -- Yes --> TokoLogsNew
   A -- No --> LoginORSignUp[【ログイン】 <br> or 【ユーザ登録】 ページ]
   LoginORSignUp --> SignUp[ユーザー登録ページ]
   SignUp -->|ユーザ登録 成功| TokoLogsNew
   LoginORSignUp --> LogIn[ログインページ]
   LogIn -->|ログイン 成功| TokoLogsNew
-
-  TopPage -->|マイページ <br> ボタン| A{ログイン中か？}
+  TopPage -->|フッター <br> 【マイページ】| A{ログイン中か？}
   A -- Yes --> MyPage[【マイページ】 <br> 自分のトコログ一覧]
   SignUp -->|ユーザ登録 成功| MyPage
   LogIn -->|ログイン 成功| MyPage
-
-  
   MyPage --> MyTokoLogShow[自分のトコlog詳細ページ]
   MyTokoLogShow --> Edit[編集ページ]
   Edit --> MyTokoLogShow
   MyTokoLogShow -->  Delete[※ページ無し <br> 削除完了]
   Delete --> MyTokoLogShow
+  TopPage -->|投稿者アイコン| ContributorsPage[投稿者のマイページ]
 ```
