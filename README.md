@@ -46,7 +46,10 @@ TokoTokoLog(トコトコLog)
 | id(PK)             | integer    | null: false               |
 | title              | string     | null: false |
 | description        | text       | null: false |
+| prefecture        | integer    | null: false |
 | user               | references | null: false, foreign_key: true |
+
+ 
 
 ### Association
 
