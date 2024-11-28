@@ -1,4 +1,6 @@
 class TokoLogsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
+  # リダイレクトすべきアクション:[:edit, :destroy]
   def index
     @toko_logs = TokoLog.all
   end
