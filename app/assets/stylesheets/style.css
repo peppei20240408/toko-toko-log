@@ -118,6 +118,11 @@ a {
   cursor: pointer;
 }
 
+.prefecture-select{
+  height: 30px;
+  width: 250px;
+}
+
 /* メイン */
 
 .greeting{

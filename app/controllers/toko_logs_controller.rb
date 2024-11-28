@@ -21,6 +21,6 @@ class TokoLogsController < ApplicationController
   private
 
   def toko_log_params
-    params.require(:toko_log).permit(:title, :description).merge(user_id: current_user.id)
+    params.require(:toko_log).permit(:title, :description, :prefecture_id).merge(user_id: current_user.id)
   end
 end

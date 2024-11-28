@@ -1,7 +1,7 @@
 <%= form_with model: toko_log, local: true do |f|%>
   <div class="field">
     <%= f.label :title, "トコLogの名前" %><br />
-    <%= f.text_field :title, id:"prototype_title" %>
+    <%= f.text_field :title, id:"prototype_title", autofocus: true %>
   </div>
 
   <div class="field">
@@ -9,8 +9,14 @@
     <%= f.text_area :description, class: :form__text, id:"prototype_catch_copy" %>
   </div>
 
+  <div class="field">
+    <div>
+      散策したエリア
+    </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"prefecture-select"}) %>
+  </div>
 
-<%# 複数の画像を投稿する方法は？ %>
+<%# pinsテーブルに複数の画像を投稿したい %>
 <% 
 =begin %>
   <div class="field">
