@@ -7,7 +7,6 @@ class TokoLog < ApplicationRecord
 
   validates :title,       presence: true
   validates :description, presence: true
-  validates :prefecture,  presence: true
 
-  validates :prefecture, numericality: { other_than: 1, message: "can't be blank" }
+  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
 end
